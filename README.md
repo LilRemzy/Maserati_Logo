@@ -46,7 +46,7 @@ Vse datoteke morajo biti v isti mapi.
 
 ## Objava na GitHub Pages
 
-Stran je objavljena na: **https://UPORABNIK.github.io/REPOZITORIJ/** (zamenjaj z lastnim naslovom).
+Stran je objavljena na: **https://lilremzy.github.io/Maserati_Logo/** (zamenjaj z lastnim naslovom).
 
 Postopek objave:
 
