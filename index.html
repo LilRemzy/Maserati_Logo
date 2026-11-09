@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maserati – Canvas, SVG in PNG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="glava">
+    <div class="blagovna-znamka">
+        <svg viewBox="640 305 720 770" aria-hidden="true"><use href="#znak-poti"/></svg>
+        <span>Maserati</span>
+    </div>
+    <nav>
+        <button data-stran="kapa">Kapa (Canvas)</button>
+        <button data-stran="polo">Polo majica (SVG)</button>
+        <button data-stran="jakna">Jakna (PNG)</button>
+    </nav>
+</header>
+<svg style="position:absolute; width:0; height:0;" aria-hidden="true"><defs><g id="znak-poti">
+                <path d="M968 428
+                    C990 383 995 316 1000 315
+                    C1006 316 1010 383 1033 428
+                    C1054 470 1100 506 1097 510
+                    C1094 515 1069 502 1056 496
+                    C1036 487 1019 479 1019 479
+                    C1019 479 1011 586 1037 684
+                    C1058 765 1109 839 1114 845
+                    L1049 845
+                    C1025 804 1013 777 1000 730
+                    C988 777 976 804 958 835
+                    C956 838 954 842 952 845
+                    L887 845
+                    C892 838 943 765 964 684
+                    C990 586 982 479 982 479
+                    C982 479 965 487 945 496
+                    C932 502 907 515 903 510
+                    C901 506 947 470 968 428 Z"/>
+                <path d="M765 845
+                    C765 837 760 729 735 644
+                    C707 551 651 495 655 490
+                    C659 485 705 494 740 518
+                    C776 543 813 585 810 588
+                    C808 590 796 580 773 572
+                    C750 563 739 564 739 564
+                    C739 564 779 630 798 701
+                    C815 761 824 838 824 845 Z"/>
+                <path d="M1237 845
+                    C1237 837 1241 729 1266 644
+                    C1294 551 1350 495 1346 490
+                    C1343 485 1297 494 1262 518
+                    C1225 543 1189 585 1191 588
+                    C1193 590 1206 580 1228 572
+                    C1252 563 1263 564 1263 564
+                    C1263 564 1223 630 1203 701
+                    C1187 761 1178 838 1178 845 Z"/>
+                <path d="M739 859 H1261 V879 H739 Z
+                    M765 896 H1237 V916 H765 Z
+                    M740 933 H1262 V953 H740 Z"/>
+                <path d="M767 969 L824 969
+                    C824 1003 802 1018 767 1010 Z
+                    M1235 969 L1178 969
+                    C1178 1003 1200 1018 1235 1010 Z
+                    M1083 995
+                    C1057 1019 1057 1062 1057 1062
+                    H944
+                    C944 1062 945 1019 919 995
+                    C900 978 878 975 878 975
+                    C863 972 863 970 863 969
+                    H1138
+                    C1138 969 1138 972 1123 975
+                    C1123 975 1101 978 1083 995 Z"/>
+            </g></defs></svg>
+<main>
+<div class="stran" id="stran-kapa">
+    <h1>Kapa – Canvas</h1>
+    <p>Znak je narisan s Canvasom z Bezierjevimi krivuljami (bezierCurveTo).</p>
+    <div class="orodja">
+        <label>Barva izdelka <input type="color" class="in-izdelek" value="#ffffff"></label>
+        <span class="vzorci"><button type="button" class="vzorec" data-barva="#ffffff" style="background:#ffffff" title="#ffffff"></button><button type="button" class="vzorec" data-barva="#111111" style="background:#111111" title="#111111"></button><button type="button" class="vzorec" data-barva="#1f3a8a" style="background:#1f3a8a" title="#1f3a8a"></button><button type="button" class="vzorec" data-barva="#c12127" style="background:#c12127" title="#c12127"></button><button type="button" class="vzorec" data-barva="#15803d" style="background:#15803d" title="#15803d"></button><button type="button" class="vzorec" data-barva="#facc15" style="background:#facc15" title="#facc15"></button></span>
+        <label>Barva znaka <input type="color" class="in-znak" value="#c12127"></label>
+        <button type="button" class="ponastavi">Ponastavi</button>
+    </div>
+    <section class="kartica">
+        <div class="mock">
+            <img class="vir" src="kapa.png" alt="Bela kapa">
+            <canvas class="osnova"></canvas>
+            <div class="opozorilo" hidden>Slike izdelka ni bilo mogoče naložiti. Datoteka s sliko mora biti v isti mapi kot HTML.</div>
+            <div class="znak" style="left:43.5%; top:29.5%; width:15%;"><canvas class="zn-el zn-canvas" width="720" height="770"></canvas></div>
+        </div>
+    </section>
+</div>
+<div class="stran" id="stran-polo">
+    <h1>Polo majica – SVG</h1>
+    <p>Znak je vektorski SVG, sestavljen iz Bezierjevih krivulj v poteh (path).</p>
+    <div class="orodja">
+        <label>Barva izdelka <input type="color" class="in-izdelek" value="#ffffff"></label>
+        <span class="vzorci"><button type="button" class="vzorec" data-barva="#ffffff" style="background:#ffffff" title="#ffffff"></button><button type="button" class="vzorec" data-barva="#111111" style="background:#111111" title="#111111"></button><button type="button" class="vzorec" data-barva="#1f3a8a" style="background:#1f3a8a" title="#1f3a8a"></button><button type="button" class="vzorec" data-barva="#c12127" style="background:#c12127" title="#c12127"></button><button type="button" class="vzorec" data-barva="#15803d" style="background:#15803d" title="#15803d"></button><button type="button" class="vzorec" data-barva="#facc15" style="background:#facc15" title="#facc15"></button></span>
+        <label>Barva znaka <input type="color" class="in-znak" value="#c12127"></label>
+        <button type="button" class="ponastavi">Ponastavi</button>
+    </div>
+    <section class="kartica">
+        <div class="mock">
+            <img class="vir" src="polo.png" alt="Bela polo majica">
+            <canvas class="osnova"></canvas>
+            <div class="opozorilo" hidden>Slike izdelka ni bilo mogoče naložiti. Datoteka s sliko mora biti v isti mapi kot HTML.</div>
+            <div class="znak" style="left:61.3%; top:28.7%; width:8%;"><svg class="zn-el zn-svg" viewBox="640 305 720 770" fill="#c12127" role="img" aria-label="Znak Maserati"><use href="#znak-poti"/></svg></div>
+        </div>
+    </section>
+</div>
+<div class="stran" id="stran-jakna">
+    <h1>Jakna – PNG</h1>
+    <p>Znak je izvožen kot PNG s prosojnim ozadjem in vstavljen kot slika.</p>
+    <div class="orodja">
+        <label>Barva izdelka <input type="color" class="in-izdelek" value="#ffffff"></label>
+        <span class="vzorci"><button type="button" class="vzorec" data-barva="#ffffff" style="background:#ffffff" title="#ffffff"></button><button type="button" class="vzorec" data-barva="#111111" style="background:#111111" title="#111111"></button><button type="button" class="vzorec" data-barva="#1f3a8a" style="background:#1f3a8a" title="#1f3a8a"></button><button type="button" class="vzorec" data-barva="#c12127" style="background:#c12127" title="#c12127"></button><button type="button" class="vzorec" data-barva="#15803d" style="background:#15803d" title="#15803d"></button><button type="button" class="vzorec" data-barva="#facc15" style="background:#facc15" title="#facc15"></button></span>
+        <label>Barva znaka <input type="color" class="in-znak" value="#c12127"></label>
+        <button type="button" class="ponastavi">Ponastavi</button>
+    </div>
+    <section class="kartica">
+        <div class="mock">
+            <img class="vir" src="jakna.png" alt="Bela bomber jakna (hrbtna stran)">
+            <canvas class="osnova"></canvas>
+            <div class="opozorilo" hidden>Slike izdelka ni bilo mogoče naložiti. Datoteka s sliko mora biti v isti mapi kot HTML.</div>
+            <div class="znak" style="left:44.5%; top:25.5%; width:14%;"><img class="zn-el zn-png" alt="Znak Maserati (PNG)"></div>
+        </div>
+    </section>
+</div>
+</main>
+
+<script>
+// Koordinate so celoštevilske (enota = desetinka prvotne enote); platno je veliko 720 x 770 točk
+function narisiZnak(context, barva) {
+            context.fillStyle = barva;
+            context.strokeStyle = barva;
+            context.lineWidth = 10;
+            context.beginPath();
+
+            // Osrednji trizob
+            context.moveTo(968, 428);
+            context.bezierCurveTo(990, 383, 995, 316, 1000, 315);
+            context.bezierCurveTo(1006, 316, 1010, 383, 1033, 428);
+            context.bezierCurveTo(1054, 470, 1100, 506, 1097, 510);
+            context.bezierCurveTo(1094, 515, 1069, 502, 1056, 496);
+            context.bezierCurveTo(1036, 487, 1019, 479, 1019, 479);
+            context.bezierCurveTo(1019, 479, 1011, 586, 1037, 684);
+            context.bezierCurveTo(1058, 765, 1109, 839, 1114, 845);
+            context.lineTo(1049, 845);
+            context.bezierCurveTo(1025, 804, 1013, 777, 1000, 730);
+            context.bezierCurveTo(988, 777, 976, 804, 958, 835);
+            context.bezierCurveTo(956, 838, 954, 842, 952, 845);
+            context.lineTo(887, 845);
+            context.bezierCurveTo(892, 838, 943, 765, 964, 684);
+            context.bezierCurveTo(990, 586, 982, 479, 982, 479);
+            context.bezierCurveTo(982, 479, 965, 487, 945, 496);
+            context.bezierCurveTo(932, 502, 907, 515, 903, 510);
+            context.bezierCurveTo(901, 506, 947, 470, 968, 428);
+            context.closePath();
+            context.fill();
+            context.stroke();
+
+            // Levo in desno stransko perje trizoba
+            context.beginPath();
+            context.moveTo(765, 845);
+            context.bezierCurveTo(765, 837, 760, 729, 735, 644);
+            context.bezierCurveTo(707, 551, 651, 495, 655, 490);
+            context.bezierCurveTo(659, 485, 705, 494, 740, 518);
+            context.bezierCurveTo(776, 543, 813, 585, 810, 588);
+            context.bezierCurveTo(808, 590, 796, 580, 773, 572);
+            context.bezierCurveTo(750, 563, 739, 564, 739, 564);
+            context.bezierCurveTo(739, 564, 779, 630, 798, 701);
+            context.bezierCurveTo(815, 761, 824, 838, 824, 845);
+            context.closePath();
+            context.fill();
+
+            context.beginPath();
+            context.moveTo(1237, 845);
+            context.bezierCurveTo(1237, 837, 1241, 729, 1266, 644);
+            context.bezierCurveTo(1294, 551, 1350, 495, 1346, 490);
+            context.bezierCurveTo(1343, 485, 1297, 494, 1262, 518);
+            context.bezierCurveTo(1225, 543, 1189, 585, 1191, 588);
+            context.bezierCurveTo(1193, 590, 1206, 580, 1228, 572);
+            context.bezierCurveTo(1252, 563, 1263, 564, 1263, 564);
+            context.bezierCurveTo(1263, 564, 1223, 630, 1203, 701);
+            context.bezierCurveTo(1187, 761, 1178, 838, 1178, 845);
+            context.closePath();
+            context.fill();
+
+            // Spodnji del in vodoravne črte znaka
+            context.beginPath();
+            context.moveTo(739, 859); context.lineTo(1261, 859);
+            context.lineTo(1261, 879); context.lineTo(739, 879); context.closePath();
+            context.moveTo(765, 896); context.lineTo(1237, 896);
+            context.lineTo(1237, 916); context.lineTo(765, 916); context.closePath();
+            context.moveTo(740, 933); context.lineTo(1262, 933);
+            context.lineTo(1262, 953); context.lineTo(740, 953); context.closePath();
+            context.fill();
+
+            // Podstavek
+            context.beginPath();
+            context.moveTo(767, 969);
+            context.lineTo(824, 969);
+            context.bezierCurveTo(824, 1003, 802, 1018, 767, 1010);
+            context.closePath();
+            context.moveTo(1235, 969);
+            context.lineTo(1178, 969);
+            context.bezierCurveTo(1178, 1003, 1200, 1018, 1235, 1010);
+            context.closePath();
+            context.moveTo(1083, 995);
+            context.bezierCurveTo(1057, 1019, 1057, 1062, 1057, 1062);
+            context.lineTo(944, 1062);
+            context.bezierCurveTo(944, 1062, 945, 1019, 919, 995);
+            context.bezierCurveTo(900, 978, 878, 975, 878, 975);
+            context.bezierCurveTo(863, 972, 863, 970, 863, 969);
+            context.lineTo(1138, 969);
+            context.bezierCurveTo(1138, 969, 1138, 972, 1123, 975);
+            context.bezierCurveTo(1123, 975, 1101, 978, 1083, 995);
+            context.closePath();
+            context.fill();
+}
+
+var PRIVZETA_IZDELEK = "#ffffff";
+var PRIVZETA_ZNAK = "#c12127";
+
+// Izdelek pobarvamo tako, da barvo pomnožimo s sliko (sence ostanejo), nato odrežemo po obliki izdelka
+function pobarvajIzdelek(stran, barva) {
+    var img = stran.querySelector(".vir");
+    var c = stran.querySelector(".osnova");
+    var opozorilo = stran.querySelector(".opozorilo");
+    if (!img.complete || !img.naturalWidth) {              // slika ni (še) naložena
+        opozorilo.hidden = !img.complete;                  // sporočilo le, če nalaganje ni uspelo
+        return;
+    }
+    opozorilo.hidden = true;
+    c.width = img.naturalWidth;
+    c.height = img.naturalHeight;
+    var x = c.getContext("2d");
+    x.clearRect(0, 0, c.width, c.height);
+    x.drawImage(img, 0, 0);
+    if (barva.toLowerCase() !== "#ffffff") {
+        x.globalCompositeOperation = "multiply";
+        x.fillStyle = barva;
+        x.fillRect(0, 0, c.width, c.height);
+        x.globalCompositeOperation = "destination-in";
+        x.drawImage(img, 0, 0);
+    }
+}
+
+function narisiZnakNa(ctx, w, h, barva) {
+    ctx.save();
+    ctx.clearRect(0, 0, w, h);
+    ctx.translate(-640, -305);
+    narisiZnak(ctx, barva);
+    ctx.restore();
+}
+
+function pobarvajZnak(stran, barva) {
+    var c = stran.querySelector(".zn-canvas");
+    if (c) narisiZnakNa(c.getContext("2d"), c.width, c.height, barva);          // Canvas
+    var svg = stran.querySelector(".zn-svg");
+    if (svg) svg.setAttribute("fill", barva);                                    // SVG
+    var png = stran.querySelector(".zn-png");
+    if (png) {                                                                  // PNG: izvoz iz canvasa
+        var tmp = document.createElement("canvas");
+        tmp.width = 720; tmp.height = 770;
+        narisiZnakNa(tmp.getContext("2d"), tmp.width, tmp.height, barva);
+        png.src = tmp.toDataURL("image/png");
+    }
+}
+
+
+window.addEventListener("load", function () {
+    document.querySelectorAll(".stran").forEach(function (stran) {
+        var inI = stran.querySelector(".in-izdelek");
+        var inZ = stran.querySelector(".in-znak");
+        function osvezi() {
+            try { pobarvajIzdelek(stran, inI.value); } catch (e) { console.warn("Izdelek:", e); }
+            try { pobarvajZnak(stran, inZ.value); } catch (e) { console.warn("Znak:", e); }
+            stran.querySelectorAll(".vzorec").forEach(function (b) {
+                b.classList.toggle("izbran", b.dataset.barva === inI.value.toLowerCase());
+            });
+        }
+        var vir = stran.querySelector(".vir");
+        vir.addEventListener("load", osvezi);
+        vir.addEventListener("error", osvezi);
+        inI.addEventListener("input", osvezi);
+        inZ.addEventListener("input", osvezi);
+        stran.querySelectorAll(".vzorec").forEach(function (b) {
+            b.addEventListener("click", function () { inI.value = b.dataset.barva; osvezi(); });
+        });
+        stran.querySelector(".ponastavi").addEventListener("click", function () {
+            inI.value = PRIVZETA_IZDELEK;
+            inZ.value = PRIVZETA_ZNAK;
+            osvezi();
+        });
+        osvezi();
+    });
+
+    // Menjava strani
+    function pokazi(id) {
+        if (!document.getElementById("stran-" + id)) id = "kapa";
+        document.querySelectorAll(".stran").forEach(function (s) { s.classList.toggle("aktivna", s.id === "stran-" + id); });
+        document.querySelectorAll("nav button").forEach(function (b) { b.classList.toggle("aktiven", b.dataset.stran === id); });
+        try { history.replaceState(null, "", "#" + id); } catch (e) { }
+    }
+    document.querySelectorAll("nav button").forEach(function (b) {
+        b.addEventListener("click", function () { pokazi(b.dataset.stran); });
+    });
+    var zacetna = "kapa";
+    try { zacetna = location.hash.replace("#", "") || "kapa"; } catch (e) { }
+    pokazi(zacetna);
+});
+</script>
+</body>
+</html>

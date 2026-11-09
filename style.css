@@ -1,0 +1,194 @@
+/* ===== Barve in osnovne vrednosti ===== */
+:root {
+    --rdeca: #c12127;
+    --rdeca-temna: #9d1a1f;
+    --besedilo: #1d2330;
+    --besedilo-bledo: #647084;
+    --ozadje: #eef0f4;
+    --crta: #dde1e8;
+    --bela: #ffffff;
+    --senca: 0 1px 2px rgba(20, 28, 45, .06), 0 8px 24px rgba(20, 28, 45, .08);
+    --polmer: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    color: var(--besedilo);
+    background: radial-gradient(1200px 500px at 50% -200px, #fff 0%, var(--ozadje) 70%);
+    min-height: 100vh;
+}
+
+/* ===== Zgornja vrstica ===== */
+.glava {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 24px;
+    padding: 12px 28px;
+    background: rgba(255, 255, 255, .85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--crta);
+}
+
+.blagovna-znamka {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    font-size: .95rem;
+}
+.blagovna-znamka svg { width: 28px; height: 30px; fill: var(--rdeca); }
+
+/* Zavihki (segmentirano stikalo) */
+nav {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    background: #e7e9ef;
+    border-radius: 999px;
+}
+nav button {
+    font: inherit;
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--besedilo-bledo);
+    background: transparent;
+    border: 0;
+    border-radius: 999px;
+    padding: 9px 20px;
+    cursor: pointer;
+    transition: background .2s, color .2s, box-shadow .2s;
+}
+nav button:hover { color: var(--besedilo); background: rgba(255, 255, 255, .7); }
+nav button.aktiven {
+    color: #fff;
+    background: var(--rdeca);
+    box-shadow: 0 4px 12px rgba(193, 33, 39, .35);
+}
+nav button:focus-visible,
+.vzorec:focus-visible,
+.ponastavi:focus-visible { outline: 3px solid rgba(193, 33, 39, .35); outline-offset: 2px; }
+
+/* ===== Vsebina ===== */
+main { max-width: 720px; margin: 0 auto; padding: 32px 20px 56px; }
+
+.stran { display: none; }
+.stran.aktivna { display: block; animation: pojavi .3s ease; }
+@keyframes pojavi { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+h1 { margin: 0 0 6px; font-size: 1.8rem; letter-spacing: -.01em; }
+.stran > p { margin: 0 0 22px; color: var(--besedilo-bledo); line-height: 1.5; }
+
+/* ===== Orodja (barve) ===== */
+.orodja {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 24px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    background: var(--bela);
+    border: 1px solid var(--crta);
+    border-radius: var(--polmer);
+    box-shadow: var(--senca);
+}
+.orodja label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--besedilo-bledo);
+}
+.orodja input[type=color] {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 2px solid var(--crta);
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+.orodja input[type=color]::-webkit-color-swatch-wrapper { padding: 0; }
+.orodja input[type=color]::-webkit-color-swatch { border: 0; border-radius: 50%; }
+.orodja input[type=color]::-moz-color-swatch { border: 0; border-radius: 50%; }
+
+.vzorci { display: flex; gap: 8px; }
+.vzorec {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border-radius: 50%;
+    border: 2px solid var(--bela);
+    box-shadow: 0 0 0 1px var(--crta);
+    cursor: pointer;
+    transition: transform .15s, box-shadow .15s;
+}
+.vzorec:hover { transform: scale(1.12); }
+.vzorec.izbran { box-shadow: 0 0 0 2px var(--rdeca); }
+
+.ponastavi {
+    margin-left: auto;
+    font: inherit;
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--besedilo);
+    background: var(--bela);
+    border: 1px solid var(--crta);
+    border-radius: 999px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background .2s, border-color .2s, color .2s;
+}
+.ponastavi:hover { color: var(--rdeca); border-color: var(--rdeca); background: #fff5f5; }
+
+/* ===== Kartica s sliko ===== */
+.kartica {
+    padding: 14px;
+    background: var(--bela);
+    border: 1px solid var(--crta);
+    border-radius: var(--polmer);
+    box-shadow: var(--senca);
+}
+.mock {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(160deg, #f1f3f7, #dfe3ea);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.mock .vir { display: none; }
+.mock .osnova { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+
+.opozorilo {
+    position: absolute;
+    left: 12px; right: 12px; top: 12px;
+    z-index: 2;
+    padding: 8px 12px;
+    background: #fff3cd;
+    color: #664d03;
+    border-radius: 8px;
+    font-size: .85rem;
+}
+.opozorilo[hidden] { display: none; }
+
+.znak { position: absolute; aspect-ratio: 72 / 77; }
+.zn-el { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+/* ===== Ozki zasloni ===== */
+@media (max-width: 560px) {
+    .glava { padding: 10px 14px; justify-content: center; }
+    nav button { padding: 8px 12px; font-size: .8rem; }
+    h1 { font-size: 1.4rem; }
+    .ponastavi { margin-left: 0; }
+}
