@@ -46,7 +46,7 @@ Vse datoteke morajo biti v isti mapi.
 
 ## Objava na GitHub Pages
 
-Stran je objavljena na: **https://lilremzy.github.io/Maserati_Logo/**.
+Stran je objavljena na: **https://lilremzy.github.io/Maserati_Logo/** (zamenjaj z lastnim naslovom).
 
 Postopek objave:
 
@@ -59,5 +59,5 @@ Vse poti do datotek so relativne (`stil.css`, `kapa.png` …), zato dodatne nast
 
 ## Opombe
 
-- Slike so iz spletnih virov (pngtree in podobno). Slika kape ima ostanek vodnega žiga.
+- Kapa in jakna sta sliki, ki ju je dal avtor projekta (brez vodnega žiga). Slika polo majice je iz spletnega vira.
 - Znak Maserati je last podjetja Maserati. Projekt je izdelan za šolsko nalogo.

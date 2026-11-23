@@ -79,7 +79,7 @@ nav button:focus-visible,
 .ponastavi:focus-visible { outline: 3px solid rgba(193, 33, 39, .35); outline-offset: 2px; }
 
 /* ===== Vsebina ===== */
-main { max-width: 720px; margin: 0 auto; padding: 32px 20px 56px; }
+main { max-width: 720px; margin: 0 auto; padding: 32px 20px 96px; }
 
 .stran { display: none; }
 .stran.aktivna { display: block; animation: pojavi .3s ease; }
@@ -192,3 +192,24 @@ h1 { margin: 0 0 6px; font-size: 1.8rem; letter-spacing: -.01em; }
     h1 { font-size: 1.4rem; }
     .ponastavi { margin-left: 0; }
 }
+
+/* ===== Noga z obvestilom o avtorskih pravicah ===== */
+.noga {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4px 16px;
+    padding: 10px 20px;
+    font-size: .78rem;
+    color: var(--besedilo-bledo);
+    background: rgba(255, 255, 255, .92);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--crta);
+    text-align: center;
+}
+.noga a { color: var(--rdeca); font-weight: 600; text-decoration: none; }
+.noga a:hover { text-decoration: underline; }
