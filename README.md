@@ -59,5 +59,4 @@ Vse poti do datotek so relativne (`stil.css`, `kapa.png` …), zato dodatne nast
 
 ## Opombe
 
-- Kapa in jakna sta sliki, ki ju je dal avtor projekta (brez vodnega žiga). Slika polo majice je iz spletnega vira.
 - Znak Maserati je last podjetja Maserati. Projekt je izdelan za šolsko nalogo.
